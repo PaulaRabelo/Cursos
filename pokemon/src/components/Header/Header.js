@@ -1,12 +1,24 @@
-import { ContainerHeader, ImagemLogo } from "./styles"
-import logo from "../../assets/logo.svg"
+import { Button, ContainerButton, ContainerLogo, ImagemLogo } from "./styles"
 
-function Header(){
 
-    return(
-     <ContainerHeader>
-        <ImagemLogo src={logo}/>
-     </ContainerHeader>
+function Header({ logo, goBack }) {
+
+    return (
+        <>
+            {logo ? (
+                <ContainerLogo>
+                    <ImagemLogo src={logo} />
+                </ContainerLogo>
+            ) : (
+                <ContainerButton>
+                    <Button onClick={goBack}>Voltar para a lista</Button>
+                </ContainerButton>
+
+            )
+            }
+
+        </>
+
     )
 }
 
